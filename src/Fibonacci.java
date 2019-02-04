@@ -16,6 +16,8 @@
  */
 public class Fibonacci {
 
+    private static int[] memory = new int[]{1,1};
+
     /**
      * returns the fib(number) of the fibonacci series
      * @param number
@@ -25,13 +27,10 @@ public class Fibonacci {
         if (number <= 0){
             throw new IllegalArgumentException();
         }
-
-        switch (number){
-            case 1:
-            case 2:
-                return 1;
-            default:
-                return getFib(number-1) + getFib(number -2);
+        if (number <= memory.length){
+            return memory[number - 1];
+        }else{
+            return getFib(number-1) + getFib(number -2);
         }
     }
 
