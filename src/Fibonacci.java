@@ -22,12 +22,15 @@ public class Fibonacci {
      * @return nth fibonacci number
      */
     public static int getFib(int number){
-        if (number == 1 || number == 2){
-            return 1;
-        } else if (number == 3){
-            return 2;
+        switch (number){
+            case 1:
+            case 2:
+                return 1;
+            case 3:
+                return 2;
+            default:
+                return -1;
         }
-        return -1;
     }
 
 
