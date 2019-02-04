@@ -27,17 +27,13 @@ public class Fibonacci {
         if (number <= 0){
             throw new IllegalArgumentException();
         }
-        if (number <= memory.length){
-            if (memory[number - 1] == 0){
-                memory[number - 1] = getFib(number-1) + getFib(number -2);
-            }
-            return memory[number - 1];
-        }else{
+        if (number > memory.length){
             memory = new int[number];
             memory[0] = 1;
             memory[1] = 1;
-            memory[number - 1] = getFib(number-1) + getFib(number -2);
-
+        }
+        if (memory[number - 1] == 0) {
+            memory[number - 1] = getFib(number - 1) + getFib(number - 2);
         }
         return memory[number-1];
     }
