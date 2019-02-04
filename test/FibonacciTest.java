@@ -1,13 +1,16 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
  * Created by Stephen West on 04/02/2019.
  */
 class FibonacciTest {
+
+    private static final long TOL = 200;
 
     @Test
     void testThatFib1returns1() {
@@ -41,5 +44,13 @@ class FibonacciTest {
         assertThrows(IllegalArgumentException.class, ()->{
             Fibonacci.getFib(-1);
         });
+    }
+
+    @Test
+    void testThatFibLargeNumberReturnsCorrectNumber(){
+        assertTimeout(Duration.ofMillis(TOL), ()->{
+            assertEquals(102334155,Fibonacci.getFib(40));
+        });
+
     }
 }
