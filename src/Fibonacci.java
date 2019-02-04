@@ -26,10 +26,8 @@ public class Fibonacci {
             case 1:
             case 2:
                 return 1;
-            case 3:
-                return 2;
             default:
-                return -1;
+                return getFib(number-1) + getFib(number -2);
         }
     }
 
