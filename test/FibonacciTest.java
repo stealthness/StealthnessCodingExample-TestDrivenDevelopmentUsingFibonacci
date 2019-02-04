@@ -17,4 +17,9 @@ class FibonacciTest {
     void testThatFib2returns1(){
         assertEquals(1,Fibonacci.getFib(2));
     }
+
+    @Test
+    void testThatFib3returns2(){
+        assertEquals(2,Fibonacci.getFib(3));
+    }
 }
