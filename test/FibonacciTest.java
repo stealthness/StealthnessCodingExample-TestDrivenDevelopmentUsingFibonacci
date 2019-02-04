@@ -22,4 +22,9 @@ class FibonacciTest {
     void testThatFib3returns2(){
         assertEquals(2,Fibonacci.getFib(3));
     }
+
+    @Test
+    void testThatFib4returns3(){
+        assertEquals(3,Fibonacci.getFib(4));
+    }
 }
