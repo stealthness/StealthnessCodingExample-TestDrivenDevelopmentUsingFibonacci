@@ -35,4 +35,11 @@ class FibonacciTest {
             Fibonacci.getFib(0);
         });
     }
+
+    @Test
+    void testThatFibLessThan0ThrowsIllegalArgumentException(){
+        assertThrows(IllegalArgumentException.class, ()->{
+            Fibonacci.getFib(-1);
+        });
+    }
 }
