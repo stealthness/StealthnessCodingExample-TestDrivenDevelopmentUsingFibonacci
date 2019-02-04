@@ -34,23 +34,16 @@ class FibonacciTest {
 
     @Test
     void testThatFib0ThrowsIllegalArgumentException(){
-        assertThrows(IllegalArgumentException.class, ()->{
-            Fibonacci.getFib(0);
-        });
+        assertThrows(IllegalArgumentException.class, ()-> Fibonacci.getFib(0));
     }
 
     @Test
     void testThatFibLessThan0ThrowsIllegalArgumentException(){
-        assertThrows(IllegalArgumentException.class, ()->{
-            Fibonacci.getFib(-1);
-        });
+        assertThrows(IllegalArgumentException.class, ()-> Fibonacci.getFib(-1));
     }
 
     @Test
     void testThatFibLargeNumberReturnsCorrectNumber(){
-        assertTimeout(Duration.ofMillis(TOL), ()->{
-            assertEquals(102334155,Fibonacci.getFib(40));
-        });
-
+        assertTimeout(Duration.ofMillis(TOL), ()-> assertEquals(102334155,Fibonacci.getFib(40)));
     }
 }
