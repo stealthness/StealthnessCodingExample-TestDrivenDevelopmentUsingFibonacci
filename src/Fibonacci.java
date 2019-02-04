@@ -22,7 +22,10 @@ public class Fibonacci {
      * @return nth fibonacci number
      */
     public static int getFib(int number){
+
         switch (number){
+            case 0:
+                throw new IllegalArgumentException();
             case 1:
             case 2:
                 return 1;
