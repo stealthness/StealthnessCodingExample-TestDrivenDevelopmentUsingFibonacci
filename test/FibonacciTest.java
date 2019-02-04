@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 /**
@@ -26,5 +27,12 @@ class FibonacciTest {
     @Test
     void testThatFib4returns3(){
         assertEquals(3,Fibonacci.getFib(4));
+    }
+
+    @Test
+    void testThatFib0ThrowsIllegalArgumentException(){
+        assertThrows(IllegalArgumentException.class, ()->{
+            Fibonacci.getFib(0);
+        });
     }
 }
